@@ -81,14 +81,14 @@ class CharacterWidgets extends StatelessWidget {
                         child: Container(
                           child: Text(
                             character.name.toString(),
-                            style: heading,
+                            style: characterHeading,
                           ),
                         ),
                       ),
                     ),
                     Text(
                       "tap to read more",
-                      style: subHeading,
+                      style: characterSubHeading,
                     ),
                   ],
                 ),

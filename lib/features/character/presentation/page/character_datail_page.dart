@@ -3,18 +3,18 @@ import 'package:futurama/core/core_export.dart';
 import 'package:futurama/features/character/domain/entities/character.dart';
 
 import '../../../../di_container.dart';
-import 'saying_widget.dart';
+import '../widgets/saying_widget.dart';
 
-class CharacterDetails extends StatefulWidget {
+class CharacterDetailPage extends StatefulWidget {
   final char;
 
-  const CharacterDetails({Key? key, required this.char}) : super(key: key);
+  const CharacterDetailPage({Key? key, required this.char}) : super(key: key);
 
   @override
-  _CharacterDetailsState createState() => _CharacterDetailsState();
+  _CharacterDetailPageState createState() => _CharacterDetailPageState();
 }
 
-class _CharacterDetailsState extends State<CharacterDetails> {
+class _CharacterDetailPageState extends State<CharacterDetailPage> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -77,7 +77,7 @@ class _CharacterDetailsState extends State<CharacterDetails> {
                       child: Container(
                         child: Text(
                           widget.char.name.toString(),
-                          style: heading,
+                          style: characterHeading,
                         ),
                       ),
                     ),
@@ -88,35 +88,35 @@ class _CharacterDetailsState extends State<CharacterDetails> {
                   padding: const EdgeInsets.fromLTRB(32, 5, 8, 32),
                   child: Text(
                      "Gender : "+ widget.char.gender,
-                    style: subHeading,
+                    style: characterSubHeading,
                   ),
                 ),
                  Padding(
                   padding: const EdgeInsets.fromLTRB(32, 0, 8, 32),
                   child: Text(
                      "Species : "+ widget.char.species,
-                    style: subHeading,
+                    style: characterSubHeading,
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(32, 0, 8, 32),
                   child: Text(
                      "Home Planet : "+ widget.char.homePlanet,
-                    style: subHeading,
+                    style: characterSubHeading,
                   ),
                 ),
                  Padding(
                   padding: const EdgeInsets.fromLTRB(32, 0, 8, 32),
                   child: Text(
                      "Occupation : "+ widget.char.occupation,
-                    style: subHeading,
+                    style: characterSubHeading,
                   ),                  
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(32, 0, 8, 0),
                   child: Text(
                      "Saying : ",
-                    style: subHeading,
+                    style: characterSubHeading
                   ),                  
                 ),
             

@@ -6,7 +6,7 @@ import '../ui_export.dart';
 
 
 
-   const TextStyle display1 = TextStyle(
+   const TextStyle characterDisplay1 = TextStyle(
     fontFamily: 'WorkSans',
     color: Colors.black,
     fontSize: 38,
@@ -14,7 +14,7 @@ import '../ui_export.dart';
     letterSpacing: 1.2,
   );
 
-   const TextStyle display2 = TextStyle(
+   const TextStyle characterDisplay2 = TextStyle(
     fontFamily: 'WorkSans',
     color: Colors.black,
     fontSize: 32,
@@ -22,7 +22,7 @@ import '../ui_export.dart';
     letterSpacing: 1.1,
   );
 
-   final TextStyle heading = TextStyle(
+   final TextStyle characterHeading = TextStyle(
     fontFamily: 'WorkSans',
     fontWeight: FontWeight.w900,
     fontSize: 34,
@@ -30,7 +30,7 @@ import '../ui_export.dart';
     letterSpacing: 1.2,
   );
 
-   final TextStyle subHeading = TextStyle(
+   final TextStyle characterSubHeading = TextStyle(
     inherit: true,
     fontFamily: 'WorkSans',
     fontWeight: FontWeight.w500,

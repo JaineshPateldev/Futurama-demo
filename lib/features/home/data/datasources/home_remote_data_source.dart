@@ -5,9 +5,8 @@ import 'dart:io';
 import 'package:futurama/core/error/exception.dart';
 import 'package:futurama/features/home/data/models/info_model.dart';
 
-import '../../../../core/util/constant.dart';
-
 import 'package:http/http.dart' as http;
+import '../../../../core/util/constant.dart';
 
 abstract class HomeRemoteDataSource{
   /// Calls the https://api.sampleapis.com/futurama/info/
@@ -16,15 +15,6 @@ abstract class HomeRemoteDataSource{
   
 }
 
-
-class HomeFireBaseSourceImpl implements HomeRemoteDataSource{
-  @override
-  Future<InfoModel> getInfo() {
-    // TODO: implement getInfo
-    throw UnimplementedError();
-  }
-  
-}
 
 class HomeRemoteDataSourceImpl implements HomeRemoteDataSource{
 

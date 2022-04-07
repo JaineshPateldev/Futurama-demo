@@ -18,6 +18,17 @@ final alphaGradient = LinearGradient(
   ],
 );
 
+
+final characterGradient = LinearGradient(
+  colors: [
+    blueColor,
+    aBlueLight,
+  ],
+   begin: Alignment.topRight,
+   end: Alignment.bottomLeft
+);
+
+
 Color dark = Color(0xffFFDEB4);
 Color med = Color(0xffFFE9CA);
 Color light = Color(0xffFFF1DC);

@@ -11,10 +11,12 @@ class AppScaffold extends StatefulWidget {
   final Function onInit;
   Function? appBarOnTabFunction;
   Widget? header;
+  String? headerTitle;
   Key? key;
   Widget body;
   Color? bodyColor;
   bool? isHome;
+  
 
   AppScaffold({
     required this.onInit,
@@ -22,6 +24,7 @@ class AppScaffold extends StatefulWidget {
     this.key,
     this.bodyColor,
      this.header,
+     this.headerTitle,
     required this.body,
     this.isHome,
   });
@@ -71,7 +74,7 @@ class _AppScaffoldState extends State<AppScaffold> {
               backgroundColor: Colors.transparent,
               elevation: 0,
               //title: Center(child: Text(sl<PackageInfo>().appName.toUpperCase() , style: appBarTitleStyle(),)),
-              title: Center(child: Text("Demo Application" , style: appBarTitleStyle(),)),
+              title: Center(child: Text(widget.headerTitle ?? "Application V1" , style: appBarTitleStyle(),)),
               leading: IconButton(
                 icon: Icon(
                   widget.isHome == true ? Icons.menu : CupertinoIcons.back,

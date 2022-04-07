@@ -33,11 +33,20 @@ class CreatorsWidget extends StatelessWidget {
 
             Widget actionChip =   ActionChip(    
                   backgroundColor: chipColor,
-                  label: Text(element.name , style: chipLableStyle(),),
-                  labelStyle: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
+                  
+                  label: Wrap(
+                    children : [ 
+                       const Padding(
+                          padding: const EdgeInsets.all(3.0),
+                          child: Icon(Icons.link),
+                        ), 
+                        Padding(
+                          padding: const EdgeInsets.all(3.0),
+                          child: Text(element.name , style: chipLableStyle(),),
+                        )
+                      ]),
+                  
+                //  labelStyle: chipLableStyle(),
                   onPressed: () async {
                      SnackBar(backgroundColor: whiteColor ,content: Text('Opening ' + element.name , style: snackBarStyle())).show(context);
                       if (await canLaunch(element.url)) {

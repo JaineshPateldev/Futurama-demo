@@ -40,7 +40,6 @@ dependencies:
   shared_preferences: ^2.0.13
   dartz: ^0.10.1
   data_connection_checker_tv: ^0.3.5-nullsafety
-  google_fonts: ^2.3.0
   package_info_plus: ^1.4.2
   snack: ^2.0.0
   getwidget: ^2.0.5

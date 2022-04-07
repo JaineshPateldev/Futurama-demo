@@ -1,9 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:futurama/features/home/presentation/widgets/creators_widget.dart';
+import 'package:futurama/features/routing/route_path.dart';
 import 'package:getwidget/getwidget.dart';
 
 import '../../../../core/core_export.dart';
+import '../../../../di_container.dart';
 import '../../domain/entities/info.dart';
 
 
@@ -16,15 +18,8 @@ class InfoWidget extends StatelessWidget {
     return SingleChildScrollView(
        scrollDirection: Axis.vertical,
       child: GFCard(
+                    elevation: 5.5,
                       boxFit: BoxFit.cover,
-                     // image: Image.asset('your asset image'),
-                      // title: GFListTile(
-                      //   avatar: GFAvatar(
-                      //     backgroundImage: AssetImage('your asset image'),
-                      //   ),
-                      //   title: Text(' Title'),
-                      //   subTitle: Text(' Sub Title'),
-                      // ),
                       content:Column(
                             children: [
                               Padding(
@@ -75,7 +70,10 @@ class InfoWidget extends StatelessWidget {
                                       buttonText: "View Characters",
                                       buttonColor: aBlueLight,
                                       textColor: darkTextColor,
-                                      onPressed: () => SnackBar(backgroundColor: whiteColor ,content: Text('View Characters' , style: snackBarStyle())).show(context),
+                                      onPressed: () {
+                                        sl<NavigationService>().navigateTo(RoutePaths.characters);
+                                       // SnackBar(backgroundColor: whiteColor ,content: Text('View Characters' , style: snackBarStyle())).show(context);
+                                      }
                                     ),
                                   ),
                                 SizedBox(

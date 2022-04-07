@@ -1,43 +1,44 @@
-import 'package:futurama/core/ui/ui_state.dart';
+
 import 'package:futurama/core/usecases/usecase.dart';
+import 'package:futurama/features/character/domain/entities/character.dart';
 import 'package:futurama/features/home/domain/entities/info.dart';
 
 import '../../../../core/core_export.dart';
 import '../../../../di_container.dart';
-import '../../domain/usecases/get_info.dart';
+import '../../domain/usecases/get_characters.dart';
 
 
 
-class HomeController extends BaseProvider{
+class CharacterController extends BaseProvider{
 
 
-    Info? info;
+   List<Character>? characters;
    late String errorMessage;
    bool isLoading = true;
 
-   HomeController(){
+   CharacterController(){
      currentState = UiState.none;
    }
 
 
  
 
-    Future<void> getInfo() async {
-   
+    Future<void> getCharacters() async {
+
        setLoadingState();
 
-       final failureOrInfo  = await GetInfo(sl()).call(NoParams());
+       final failureOrCharacters  = await GetCharacters(sl()).call(NoParams());
        
 
       
-        failureOrInfo.fold(
+        failureOrCharacters.fold(
           (failure){
             failureMessage(failure);
             setErrorState();
           },
-          (info){
+          (characters){
               
-               this.info = info;
+               this.characters = characters ;
                setLoadedState();
               
           } 

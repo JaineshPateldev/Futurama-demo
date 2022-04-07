@@ -50,13 +50,14 @@ class _HomePageState extends State<HomePage> {
 
       case UiState.loading :
           return const Align(child: Center(child: CircularProgressIndicator()));
+      case UiState.none :
+          return const Align(child: Center(child: CircularProgressIndicator()));
       case UiState.error :
-          return  CustomErrorWidget(title: homeController!.errorMessage , refreshFunction: ()=>homeController.gtInfo());
+          return  CustomErrorWidget(title: homeController!.errorMessage , refreshFunction: ()=>homeController.getInfo());
       case UiState.loaded :
           return InfoWidget(info: homeController.info);
       default:
-         // return  CustomErrorWidget(title:"Retry",refreshFunction: ()=>homeController.gtInfo());
-          return const Align(child: Center(child: CircularProgressIndicator()));
+            return  CustomErrorWidget(title: '' , refreshFunction: ()=>homeController.getInfo());
     }
   
   }

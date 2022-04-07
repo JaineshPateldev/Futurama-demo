@@ -1,19 +1,63 @@
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../ui_export.dart';
 
+
+
+
+   const TextStyle display1 = TextStyle(
+    fontFamily: 'WorkSans',
+    color: Colors.black,
+    fontSize: 38,
+    fontWeight: FontWeight.w600,
+    letterSpacing: 1.2,
+  );
+
+   const TextStyle display2 = TextStyle(
+    fontFamily: 'WorkSans',
+    color: Colors.black,
+    fontSize: 32,
+    fontWeight: FontWeight.normal,
+    letterSpacing: 1.1,
+  );
+
+   final TextStyle heading = TextStyle(
+    fontFamily: 'WorkSans',
+    fontWeight: FontWeight.w900,
+    fontSize: 34,
+    color: Colors.white.withOpacity(0.8),
+    letterSpacing: 1.2,
+  );
+
+   final TextStyle subHeading = TextStyle(
+    inherit: true,
+    fontFamily: 'WorkSans',
+    fontWeight: FontWeight.w500,
+    fontSize: 24,
+    color: Colors.white.withOpacity(0.8),
+  );
+
+
+  final TextStyle chatStyle = TextStyle(
+    inherit: true,
+    fontFamily: 'WorkSans',
+    fontWeight: FontWeight.w500,
+    fontSize: 15,
+    color: Colors.grey.withOpacity(0.8),
+  );
+
 TextStyle snackBarStyle() {
-  return GoogleFonts.montserrat(
+ 
+  return TextStyle(
     fontSize: SizeConfig.safeBlockHorizontal! * 4,
     color: Colors.black,
     fontWeight: FontWeight.w600,
-  );
+);
 }
 
 TextStyle appBarTitleStyle() {
-  return GoogleFonts.montserrat(
+  return TextStyle(
     fontSize: SizeConfig.safeBlockHorizontal! * 4,
     color: Colors.white,
     fontWeight: FontWeight.w600,
@@ -21,7 +65,7 @@ TextStyle appBarTitleStyle() {
 }
 
 TextStyle chipLableStyle() {
-  return GoogleFonts.montserrat(
+  return TextStyle(
     fontSize: SizeConfig.safeBlockHorizontal! * 3.5,
     color: Colors.white,
     fontWeight: FontWeight.w600,
@@ -33,14 +77,14 @@ TextStyle chipLableStyle() {
 
 // Common Used
 TextStyle headerStyle() {
-  return GoogleFonts.montserrat(
+  return TextStyle(
     fontSize: SizeConfig.safeBlockHorizontal! * 5,
     color: Colors.white,
     fontWeight: FontWeight.w600,
   );
 }
 TextStyle titleStyle() {
-  return GoogleFonts.montserrat(
+  return TextStyle(
     fontSize: SizeConfig.safeBlockHorizontal! * 3.5,
     color: Colors.black,
     fontWeight: FontWeight.w600,
@@ -48,7 +92,7 @@ TextStyle titleStyle() {
 }
 
 TextStyle descriptionTextStyle() {
-  return GoogleFonts.montserrat(
+  return TextStyle(
     fontSize: SizeConfig.safeBlockHorizontal! * 3.5,
     color: Colors.black,
     fontWeight: FontWeight.w600,
@@ -56,7 +100,7 @@ TextStyle descriptionTextStyle() {
 }
 
 TextStyle lableTextStyle() {
-  return GoogleFonts.montserrat(
+  return TextStyle(
     fontSize: SizeConfig.safeBlockHorizontal! * 3.5,
     color: Colors.grey,
     fontWeight: FontWeight.w600,
@@ -64,13 +108,13 @@ TextStyle lableTextStyle() {
 }
 
 TextStyle normalTextStyle() {
-  return GoogleFonts.montserrat(
+  return TextStyle(
     fontSize: SizeConfig.safeBlockHorizontal! * 4,
     color: Colors.black,
   );
 }
 TextStyle commonUseBellowHeaderTextDeffrentColorStyle({required Color color}) {
-  return GoogleFonts.montserrat(
+  return TextStyle(
     fontSize: SizeConfig.safeBlockHorizontal! * 5,
 
     color: color,
@@ -81,14 +125,14 @@ TextStyle commonUseBellowHeaderTextDeffrentColorStyle({required Color color}) {
 
 
 TextStyle textInputTextStyle() {
-  return GoogleFonts.montserrat(
+  return TextStyle(
     fontSize: SizeConfig.safeBlockHorizontal! * 4,
     color: Colors.black,
   );
 }
 
 TextStyle errorTextStyle() {
-  return GoogleFonts.montserrat(
+  return TextStyle(
     fontSize: SizeConfig.safeBlockHorizontal! * 4,
     color: redColors,
     fontWeight: FontWeight.w500,
@@ -97,7 +141,7 @@ TextStyle errorTextStyle() {
 
 //CheckBox Style
 TextStyle checkBoxStyle() {
-  return GoogleFonts.montserrat(
+  return TextStyle(
     fontSize: SizeConfig.safeBlockHorizontal! * 4,
     color: Colors.black,
     fontWeight: FontWeight.w500,
@@ -106,7 +150,7 @@ TextStyle checkBoxStyle() {
 
 // SubText Text
 TextStyle subTitleTextStyle() {
-  return GoogleFonts.montserrat(
+  return TextStyle(
     fontSize: SizeConfig.safeBlockHorizontal! * 3.5,
     color: Colors.black,
   );
@@ -115,7 +159,7 @@ TextStyle subTitleTextStyle() {
 
 //CUSTOM BUTTON
 TextStyle customButtonStyle({required Color textColor}) {
-  return GoogleFonts.montserrat(
+  return TextStyle(
     color: textColor,
     fontSize: SizeConfig.safeBlockHorizontal! * 4,
   );
@@ -123,14 +167,14 @@ TextStyle customButtonStyle({required Color textColor}) {
 
 // custom input text
 TextStyle customInputTextHint() {
-  return GoogleFonts.montserrat(
+  return TextStyle(
     fontSize: SizeConfig.safeBlockHorizontal! * 4,
     color: Colors.black45,
   );
 }
 //For custom Text input
 TextStyle customInputTextStyle() {
-  return GoogleFonts.montserrat(
+  return TextStyle(
     fontSize: SizeConfig.safeBlockHorizontal! * 4,
     color: Colors.black,
   );

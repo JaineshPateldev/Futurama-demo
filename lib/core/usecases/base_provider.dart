@@ -7,21 +7,25 @@ class BaseProvider with ChangeNotifier{
     late UiState currentState;
 
 
-    setErrorState(){
+    setErrorState() async{
       currentState = UiState.error;
+      await Future.delayed(const Duration(milliseconds: 1)); 
          notifyListeners();
 
     }
 
 
-    setLoadingState(){
+    setLoadingState() async {
+      
       currentState = UiState.loading;
+      await Future.delayed(const Duration(milliseconds: 1)); 
          notifyListeners();
 
     }
 
-    setLoadedState(){
+    setLoadedState() async{
       currentState = UiState.loaded;
+       await Future.delayed(const Duration(milliseconds: 1)); 
          notifyListeners();
 
     }

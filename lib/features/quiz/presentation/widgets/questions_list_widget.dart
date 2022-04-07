@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:futurama/core/core_export.dart';
-import 'package:futurama/core/ui/ui_export.dart';
-import 'package:futurama/features/character/domain/entities/character.dart';
-import 'package:futurama/features/routing/route_path.dart';
+import 'package:futurama/features/quiz/domain/entities/question.dart';
 
-import '../../../../di_container.dart';
-
-class CharacterWidgets extends StatelessWidget {
-  final Character character;
+class QuestionsListWidgets extends StatelessWidget {
+  final Question question;
   final PageController? pc;
   final int cp;
 
-    CharacterWidgets({Key? key, required this.character,required this.pc,required this.cp});
+    QuestionsListWidgets({Key? key, required this.question,required this.pc,required this.cp});
 
   @override
   Widget build(BuildContext context) {
-        SizeConfig().init(context);
+    SizeConfig().init(context);
     return InkWell(
       highlightColor: Colors.transparent,
       splashColor: Colors.transparent,
@@ -23,13 +19,15 @@ class CharacterWidgets extends StatelessWidget {
         // Navigator.push(context, MaterialPageRoute(builder: (_) {
         //   return CharacterDetails(char: character);
         // }));
-        sl<NavigationService>().navigateTo(RoutePaths.charactersDetailsPage , arguments: character);
+        //sl<NavigationService>().navigateTo(RoutePaths.charactersDetailsPage , arguments: character);
       },
       child: AnimatedBuilder(
         animation: pc!,
         builder: (context, child) {
           double value = 1;
+         
           if (pc!.position.haveDimensions) {
+           
             value = pc!.page! - cp;
             value = (1 - (value.abs() * 0.6)).clamp(0.0, 1.0);
           }
@@ -42,7 +40,7 @@ class CharacterWidgets extends StatelessWidget {
                   child: ClipPath(
                     clipper: CharacterCardBackgroundClipper(),
                     child: Hero(
-                      tag: "background-${character.name}",
+                      tag: "background-${question.question}",
                       child: Container(
                         height: SizeConfig.screenWidth! * 1,
                         width: SizeConfig.screenWidth!  * 0.9,
@@ -54,20 +52,20 @@ class CharacterWidgets extends StatelessWidget {
                   ),
                 ),
               ),
-              Align(
-                alignment: Alignment(0, -0.5),
-                child: Hero(
-                  tag: "image-${character.name.toString()}",
-                  child:Image.network(
-                            character.images.main,
-                            width: SizeConfig.screenHeight! * 0.55 * value,
-                            loadingBuilder: (context, child, loadingProgress) {
-                              if (loadingProgress == null) return child;
-                              return const Align(child: Center(child: CircularProgressIndicator()));
-                            },
-                          ),
-                ),
-              ),
+              // Align(
+              //   alignment: Alignment(0, -0.5),
+              //   child: Hero(
+              //     tag: "image-${character.name.toString()}",
+              //     child:Image.network(
+              //               character.images.main,
+              //               width: SizeConfig.screenHeight! * 0.55 * value,
+              //               loadingBuilder: (context, child, loadingProgress) {
+              //                 if (loadingProgress == null) return child;
+              //                 return const Align(child: Center(child: CircularProgressIndicator()));
+              //               },
+              //             ),
+              //   ),
+              // ),
               Padding(
                 padding: const EdgeInsets.only(left: 52, right: 16, bottom: 24),
                 child: Column(
@@ -75,12 +73,12 @@ class CharacterWidgets extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
                     Hero(
-                      tag: "name-${character.name.toString()}",
+                      tag: "name-${question.id.toString()}",
                       child: Material(
                         color: Colors.transparent,
                         child: Container(
                           child: Text(
-                            character.name.toString(),
+                            question.id.toString(),
                             style: characterHeading,
                           ),
                         ),

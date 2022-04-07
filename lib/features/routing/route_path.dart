@@ -1,13 +1,15 @@
 class RoutePaths {
 
   
-  static const String home = 'home';
+  static const String homePage = 'home';
 
   
-  static const String characters = 'characters';
+  static const String charactersPage = 'characters';
 
     
-  static const String charactersDetails = 'charactersDetails';
+  static const String charactersDetailsPage = 'charactersDetails';
+
+  static const String quizPage = 'quizPage';
   
 
 

@@ -71,7 +71,7 @@ class InfoWidget extends StatelessWidget {
                                       buttonColor: aBlueLight,
                                       textColor: darkTextColor,
                                       onPressed: () {
-                                        sl<NavigationService>().navigateTo(RoutePaths.characters);
+                                        sl<NavigationService>().navigateTo(RoutePaths.charactersPage);
                                        // SnackBar(backgroundColor: whiteColor ,content: Text('View Characters' , style: snackBarStyle())).show(context);
                                       }
                                     ),
@@ -82,7 +82,7 @@ class InfoWidget extends StatelessWidget {
                                       buttonText: "Take a Quiz",
                                       buttonColor: aBlueLight,
                                       textColor: darkTextColor,
-                                      onPressed: () => SnackBar(backgroundColor: whiteColor ,content: Text('Take a Quiz' , style: snackBarStyle())).show(context),
+                                      onPressed: () =>  sl<NavigationService>().navigateTo(RoutePaths.quizPage)
                                     ),
                                   ),
     

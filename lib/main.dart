@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'core/core_export.dart';
 import 'di_container.dart' as di;
 import 'di_container.dart';
+import 'features/quiz/presentation/controller/quiz_controller.dart';
 import 'features/routing/route_path.dart';
 import 'features/routing/router.dart' as router;
 
@@ -25,6 +26,9 @@ void main() async{
       providers: [
         ChangeNotifierProvider(create: (_) => HomeController()),
         ChangeNotifierProvider(create: (_) => CharacterController()),
+        ChangeNotifierProvider(create: (_) => QuizController()),
+
+        
       ],
       child:  const MyApp(),
     ),
@@ -50,7 +54,7 @@ class MyApp extends StatelessWidget {
       ),
         navigatorKey: sl<NavigationService>().navigatorKey,
         onGenerateRoute: router.Router.generateRoute,
-       initialRoute: RoutePaths.home,
+       initialRoute: RoutePaths.homePage,
         
     );
   }

@@ -74,7 +74,7 @@ class _AppScaffoldState extends State<AppScaffold> {
               backgroundColor: Colors.transparent,
               elevation: 0,
               //title: Center(child: Text(sl<PackageInfo>().appName.toUpperCase() , style: appBarTitleStyle(),)),
-              title: Center(child: Text(widget.headerTitle ?? "Application V1" , style: appBarTitleStyle(),)),
+              title: Center(child: Text(widget.headerTitle ?? "Futurama Application" , style: appBarTitleStyle(),)),
               leading: IconButton(
                 icon: Icon(
                   widget.isHome == true ? Icons.menu : CupertinoIcons.back,
@@ -116,7 +116,7 @@ class _AppScaffoldState extends State<AppScaffold> {
             topLeft: Radius.circular(30),
           ),
         ),
-        height: SizeConfig.safeBlockVertical! * 94,
+        height: SizeConfig.safeBlockVertical! *90,
         width: double.infinity,
         margin: EdgeInsets.only(top: SizeConfig.safeBlockVertical! * 5),
         child: Container(

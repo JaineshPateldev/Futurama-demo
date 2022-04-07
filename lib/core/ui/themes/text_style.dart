@@ -30,12 +30,31 @@ import '../ui_export.dart';
     letterSpacing: 1.2,
   );
 
+
+     final TextStyle questionrHeadingTextStyle = TextStyle(
+    fontFamily: 'WorkSans',
+    fontWeight: FontWeight.w800,
+    fontSize: 34,
+    color: Colors.black.withOpacity(0.8),
+    letterSpacing: 1,
+  );
+
    final TextStyle characterSubHeading = TextStyle(
     inherit: true,
     fontFamily: 'WorkSans',
     fontWeight: FontWeight.w500,
     fontSize: 24,
     color: Colors.white.withOpacity(0.8),
+  );
+
+
+
+  final TextStyle optionTextStyle = TextStyle(
+    inherit: true,
+    fontFamily: 'WorkSans',
+    fontWeight: FontWeight.w500,
+    fontSize: 24,
+    color: Colors.black.withOpacity(0.8),
   );
 
 

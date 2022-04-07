@@ -5,6 +5,7 @@ import 'package:futurama/features/character/data/datasources/character_remote_da
 import 'package:futurama/features/character/domain/usecases/get_characters.dart';
 import 'package:futurama/features/home/data/datasources/home_local_data_source.dart';
 import 'package:futurama/features/home/data/datasources/home_remote_data_source.dart';
+import 'package:futurama/features/quiz/domain/usecases/get_questions.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
@@ -14,6 +15,10 @@ import 'features/character/domain/repositories/character_repository.dart';
 import 'features/home/data/repositories/home_repository_impl.dart';
 import 'features/home/domain/repositories/home_repository.dart';
 import 'features/home/domain/usecases/get_info.dart';
+import 'features/quiz/data/datasources/quiz_local_data_source.dart';
+import 'features/quiz/data/datasources/quiz_remote_data_source.dart';
+import 'features/quiz/data/repositories/quiz_repository_impl.dart';
+import 'features/quiz/domain/repositories/quiz_repository.dart';
 
 
 final sl = GetIt.instance;
@@ -33,6 +38,7 @@ Future<void> init() async {
   //! Home Module
   await initHomeModule();
   await initCharacterModule();
+  await initQuizModule();
 
   //! Core
    initCore();
@@ -97,7 +103,7 @@ Future<void> init() async {
 }
 
  initCharacterModule(){
-   {
+   
 
   // Remote Data Source
   sl.registerLazySingleton<CharacterRemoteDataSource>(() =>CharacterRemoteDataSourceImpl(client:sl()));
@@ -114,4 +120,25 @@ Future<void> init() async {
   // UseCase
   sl.registerLazySingleton(() => GetCharacters(sl()));
 }
- }
+
+initQuizModule(){
+   
+
+  // Remote Data Source
+  sl.registerLazySingleton<QuizRemoteDataSource>(() =>QuizRemoteDataSourceImpl(client:sl()));
+
+  // Local Data Source
+ 
+  sl.registerLazySingleton<QuizLocalDataSource>(() =>QuizLocalDataSourceImpl());
+
+
+  // Repo
+  sl.registerLazySingleton<QuizRepository>(() => QuizRepositoryImpl(remoteDataSource: sl(), localDataSource: sl(), networkInfo: sl()));
+
+
+  // UseCase
+  sl.registerLazySingleton(() => GetQuestions(sl()));
+}
+
+
+ 

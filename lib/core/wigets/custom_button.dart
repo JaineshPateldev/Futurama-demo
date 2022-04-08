@@ -62,6 +62,8 @@ class CustomButton extends StatelessWidget {
                   ),
             Text(
               buttonText,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
               semanticsLabel: buttonText,
               style: customButtonStyle(
                 textColor: textColor,

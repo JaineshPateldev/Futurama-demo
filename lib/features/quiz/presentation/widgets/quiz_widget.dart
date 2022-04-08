@@ -1,6 +1,7 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
+import 'package:futurama/core/ui/language/app_localizations.dart';
 import 'package:futurama/features/home/presentation/widgets/creators_widget.dart';
 import 'package:futurama/features/quiz/domain/entities/question.dart';
 import 'package:futurama/features/quiz/presentation/controller/quiz_controller.dart';
@@ -32,14 +33,14 @@ class QuizWidget extends StatelessWidget {
                                 SizedBox(
                                     width: SizeConfig.safeBlockHorizontal! * 40.0,
                                     child: CustomButton(
-                                      buttonText: "Back",
+                                      buttonText:(AppLocalizations.of(context)?.translate('back'))!,
                                       buttonColor: aBlueLight,
                                       textColor: darkTextColor,
                                       onPressed: () {
                                        context.read<QuizController>().backQuestion();
                                        if(context.read<QuizController>().currentQuestion! == 0){
                                          context.read<QuizController>().nextQuestion();
-                                         showExitDialog(context :context ,title:"Do you Want to Exit the Quiz !!",desc: "");
+                                         showExitDialog(context :context ,title:(AppLocalizations.of(context)?.translate('do_you_want_to_exit_the_quiz') )!+ " !!" ,desc: "");
                                        }
                                         //SnackBar(backgroundColor: whiteColor ,content: Text('Back' , style: snackBarStyle())).show(context);
                                       }
@@ -48,14 +49,14 @@ class QuizWidget extends StatelessWidget {
                                 SizedBox(
                                     width: SizeConfig.safeBlockHorizontal! * 40.0,
                                     child: CustomButton(
-                                      buttonText: "Next",
+                                      buttonText: (AppLocalizations.of(context)?.translate('next'))! ,
                                       buttonColor: aBlueLight,
                                       textColor: darkTextColor,
                                       onPressed: () {
                                          context.read<QuizController>().nextQuestion();
                                            if(context.read<QuizController>().currentQuestion! >=  questions.length){
                                               context.read<QuizController>().backQuestion();
-                                              showFnishDialog(context :context ,title:"Do you Want to Finish the Quiz !!",desc: "");
+                                              showFnishDialog(context :context ,title:(AppLocalizations.of(context)?.translate('do_you_want_to_finish_the_quiz') )!+ " !!",desc: "");
                                             }
                                     //    SnackBar(backgroundColor: whiteColor ,content: Text('Next' , style: snackBarStyle())).show(context);
                                       }
@@ -116,7 +117,7 @@ class QuizWidget extends StatelessWidget {
                             animType: AnimType.TOPSLIDE,
                             showCloseIcon: false,
                             closeIcon: Icon(Icons.close_fullscreen_outlined),
-                            title: context.read<QuizController>().isPass() ?  "Congratulations Pass!!" : "Unfortunately Fail!!" ,
+                            title: context.read<QuizController>().isPass() ?  (AppLocalizations.of(context)?.translate('congratulations_pass') )!+ " !!" :(AppLocalizations.of(context)?.translate('unfortunately_fail') )! ,
                             desc: context.read<QuizController>().getDescription(), 
                             btnOkOnPress: () {
                                   context.read<QuizController>().resetQuestion();

@@ -3,22 +3,20 @@ import 'package:futurama/features/character/presentation/controller/character_co
 import 'package:futurama/features/home/presentation/controller/home_controller.dart';
 import 'package:provider/provider.dart';
 import 'core/core_export.dart';
+import 'core/ui/language/app_language_controller.dart';
+import 'core/ui/language/app_localizations.dart';
 import 'core/ui/themes/theme_controller.dart';
 import 'core/ui/themes/theme_data_constant.dart';
 import 'di_container.dart' as di;
-import 'di_container.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'features/quiz/presentation/controller/quiz_controller.dart';
 import 'features/routing/route_path.dart';
 import 'features/routing/router.dart' as router;
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  try {
      await di.init();
-    
-  } catch (e) {
-    
-  }
   
   
   runApp(
@@ -30,8 +28,11 @@ void main() async{
         ChangeNotifierProvider(create: (_) => CharacterController()),
         ChangeNotifierProvider(create: (_) => QuizController()),
         ChangeNotifierProvider(create: (_) => ThemeController(localDataSource: sl())),
+        ChangeNotifierProvider(create: (_) => AppLanguageController(localDataSource: sl())),
       ],
-      child:  const MyApp(),
+      child: Phoenix(
+         child:const MyApp(),
+      )
     ),
   );
 }
@@ -54,7 +55,26 @@ class MyApp extends StatelessWidget {
         navigatorKey: sl<NavigationService>().navigatorKey,
         onGenerateRoute: router.Router.generateRoute,
        initialRoute: RoutePaths.homePage,
-        
+       locale: context.watch<AppLanguageController>().currentAppLocal,
+       localizationsDelegates: const [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+          ],
+        supportedLocales: const [
+          Locale('en', 'US'),
+          Locale('es', ''),
+        ],
+       localeResolutionCallback: (locale, supportedLocales) {
+          for (var supportedLocale in supportedLocales) {
+            print(supportedLocale.languageCode);
+            if (supportedLocale.languageCode == locale?.languageCode) {
+              return supportedLocale;
+            }
+            
+          }
+          return supportedLocales.first;
+        },
     );
   }
 }

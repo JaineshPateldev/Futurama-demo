@@ -3,6 +3,7 @@ import 'dart:ffi';
 import 'package:dartz/dartz_unsafe.dart';
 import 'package:flutter/material.dart';
 import 'package:futurama/core/core_export.dart';
+import 'package:futurama/core/ui/language/app_localizations.dart';
 import 'package:futurama/features/home/domain/entities/info.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -21,7 +22,7 @@ class CreatorsWidget extends StatelessWidget {
         child: Padding(
               padding: const EdgeInsets.only(top: 5),
           child:Align(alignment: Alignment.topLeft,
-                  child: Text("Creators :" , style: lableTextStyle() , textAlign: TextAlign.left,)),  
+                  child: Text((AppLocalizations.of(context)?.translate('creators'))! + " : ", style: lableTextStyle() , textAlign: TextAlign.left,)),  
         ),
       ),
         Align(
@@ -54,13 +55,13 @@ class CreatorsWidget extends StatelessWidget {
                         ), 
                         Padding(
                           padding: const EdgeInsets.all(3.0),
-                          child: Text(element.name , style: chipLableStyle(),semanticsLabel: "Creators " +element.name),
+                          child: Text(element.name , style: chipLableStyle(),semanticsLabel: (AppLocalizations.of(context)?.translate('creators'))! +element.name),
                         )
                       ]),
                   
                 //  labelStyle: chipLableStyle(),
                   onPressed: () async {
-                     SnackBar(backgroundColor: whiteColor ,content: Text('Opening ' + element.name , style: snackBarStyle())).show(context);
+                    // SnackBar(backgroundColor: whiteColor ,content: Text('Opening ' + element.name , style: snackBarStyle())).show(context);
                       if (await canLaunch(element.url)) {
                               // Launch the App
                               await launch(

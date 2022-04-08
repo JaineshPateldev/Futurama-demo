@@ -186,7 +186,7 @@ TextStyle subTitleTextStyle() {
 TextStyle customButtonStyle({required Color textColor}) {
   return TextStyle(
     color: textColor,
-    fontSize: SizeConfig.safeBlockHorizontal! * 4,
+    fontSize: SizeConfig.safeBlockHorizontal! * 3.5,
   );
 }
 

@@ -1,11 +1,10 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
+import 'package:futurama/core/ui/language/app_localizations.dart';
 import 'package:futurama/features/home/presentation/widgets/creators_widget.dart';
 import 'package:futurama/features/routing/route_path.dart';
 import 'package:getwidget/getwidget.dart';
 
 import '../../../../core/core_export.dart';
-import '../../../../di_container.dart';
 import '../../domain/entities/info.dart';
 
 
@@ -15,11 +14,12 @@ class InfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(AppLocalizations.of(context)?.translate('information_of'));
     return SingleChildScrollView(
        scrollDirection: Axis.vertical,
        
       child: Semantics(
-        value:"Information of",
+        value:AppLocalizations.of(context)?.translate('information_of'),
         child: GFCard(
                       elevation: 5.5,
                         boxFit: BoxFit.cover,
@@ -31,7 +31,7 @@ class InfoWidget extends StatelessWidget {
                                         Padding(
                                     padding: const EdgeInsets.only(top: 5,bottom: 5),
                                     child: Align(alignment: Alignment.topLeft,
-                                      child: Text("Synopsis : " , style: lableTextStyle() , textAlign: TextAlign.left)),
+                                      child: Text((AppLocalizations.of(context)?.translate('synopsis'))! + " : " , style: lableTextStyle() , textAlign: TextAlign.left)),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(left: 5,right: 5),
@@ -48,7 +48,7 @@ class InfoWidget extends StatelessWidget {
                                   child: MergeSemantics(
                                     child: Row(
                                       children: [
-                                         Text("Years Aired : " , style: lableTextStyle() , textAlign: TextAlign.left, semanticsLabel: "Years From",),
+                                         Text((AppLocalizations.of(context)?.translate('years_aired'))! + " : " , style: lableTextStyle() , textAlign: TextAlign.left, semanticsLabel: AppLocalizations.of(context)?.translate('years_form')),
                                          Padding(
                                             padding: const EdgeInsets.only(left: 5,right: 5,top: 5),
                                             child :Text(info.yearsAired , style: descriptionTextStyle()),
@@ -72,7 +72,7 @@ class InfoWidget extends StatelessWidget {
                                   SizedBox(
                                       width: SizeConfig.safeBlockHorizontal! * 40.0,
                                       child: CustomButton(
-                                        buttonText: "View Characters",
+                                        buttonText: (AppLocalizations.of(context)?.translate('view_characters') )!,
                                         buttonColor: aBlueLight,
                                         textColor: darkTextColor,
                                         onPressed: () {
@@ -84,7 +84,7 @@ class InfoWidget extends StatelessWidget {
                                   SizedBox(
                                       width: SizeConfig.safeBlockHorizontal! * 40.0,
                                       child: CustomButton(
-                                        buttonText: "Take a Quiz",
+                                        buttonText: (AppLocalizations.of(context)?.translate('take_a_quiz'))!,
                                         buttonColor: aBlueLight,
                                         textColor: darkTextColor,
                                         onPressed: () =>  sl<NavigationService>().navigateTo(RoutePaths.quizPage)

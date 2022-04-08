@@ -1,0 +1,18 @@
+{
+    "information_of":"Información de",
+    "synopsis":"Sinopsis",
+    "years_aired":"Años al aire",
+    "years_form":"Formulario de años",
+    "creators":"Creadoras",
+    "view_characters":"Ver personajes",
+    "take_a_quiz":"Tomar una prueba",
+    "congratulations_pass":"Felicidades Pase",
+    "unfortunately_fail":"Desafortunadamente falló",
+    "do_you_want_to_finish_the_quiz":"¿Quieres terminar el cuestionario?",
+    "do_you_want_to_exit_the_quiz":"¿Quieres salir del cuestionario?",
+    "tap_to_read_more":"Toque para leer más",
+    "next":"Próxima",
+    "back":"Atrás",
+    "result_pass":"Pase de resultado",
+    "result_fail":"Resultado fallido"
+    }

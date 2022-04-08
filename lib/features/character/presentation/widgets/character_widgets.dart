@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:futurama/core/core_export.dart';
+import 'package:futurama/core/ui/language/app_localizations.dart';
 import 'package:futurama/core/ui/ui_export.dart';
 import 'package:futurama/features/character/domain/entities/character.dart';
 import 'package:futurama/features/routing/route_path.dart';
@@ -87,7 +88,7 @@ class CharacterWidgets extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "tap to read more",
+                       (AppLocalizations.of(context)?.translate('tap_to_read_more') )!,
                       style: characterSubHeading,
                     ),
                   ],

@@ -15,10 +15,7 @@ class QuestionWidget extends StatelessWidget {
       highlightColor: Colors.transparent,
       splashColor: Colors.transparent,
       onTap: () {
-        // Navigator.push(context, MaterialPageRoute(builder: (_) {
-        //   return CharacterDetails(char: character);
-        // }));
-        //sl<NavigationService>().navigateTo(RoutePaths.charactersDetailsPage , arguments: character);
+        
       },
       child: Column(
             children: <Widget>[

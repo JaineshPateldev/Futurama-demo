@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:futurama/core/core_export.dart';
-import 'package:futurama/features/quiz/domain/entities/question.dart';
 import 'package:futurama/features/quiz/presentation/controller/quiz_controller.dart';
 import 'package:provider/src/provider.dart';
-
-import 'option_widget.dart';
 
 class ScoreWidget extends StatelessWidget {
     ScoreWidget({Key? key});
@@ -16,10 +13,6 @@ class ScoreWidget extends StatelessWidget {
       highlightColor: Colors.transparent,
       splashColor: Colors.transparent,
       onTap: () {
-        // Navigator.push(context, MaterialPageRoute(builder: (_) {
-        //   return CharacterDetails(char: character);
-        // }));
-        //sl<NavigationService>().navigateTo(RoutePaths.charactersDetailsPage , arguments: character);
       },
       child: Padding(
                 padding:  EdgeInsets.only(left: SizeConfig.safeBlockHorizontal!* 0.1),

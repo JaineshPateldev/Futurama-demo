@@ -27,30 +27,11 @@ class ScoreWidget extends StatelessWidget {
                                 color: Colors.transparent,
                                   child: Padding(
                                     padding: const EdgeInsets.all(8.0),
-                                    child: Text("Q :"+ (context.read<QuizController>().currentQuestion!+1).toString(),
+                                    child: Text("Q : "+ (context.read<QuizController>().currentQuestion!+1).toString(),
                                           overflow: TextOverflow.ellipsis,
                                           maxLines: 1,
                                           style: questionrHeadingTextStyle,
                                       ),
-                                   ),
-                              ),
-                            ),
-                  ),
-                    
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Hero(
-                              tag: "score-id",
-                              child: Material(
-                                color: Colors.transparent,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text(context.read<QuizController>().getCorrentAns().toString()+ " / " +context.read<QuizController>().numberOfQuestionInQuiz.toString(),
-                                          overflow: TextOverflow.ellipsis,
-                                          maxLines: 1,
-                                          style: questionrHeadingTextStyle,
-                                      ),
-                                  
                                    ),
                               ),
                             ),
@@ -59,6 +40,5 @@ class ScoreWidget extends StatelessWidget {
                 ),
               )
     );
-    
 }
 }

@@ -14,5 +14,14 @@
     "next":"Próxima",
     "back":"Atrás",
     "result_pass":"Pase de resultado",
-    "result_fail":"Resultado fallido"
+    "result_fail":"Resultado fallido",
+    "gender":"Género",
+    "male":"Masculina",
+    "species":"Especies",
+    "human":"Humana",
+    "home_planet":"Planeta natal",
+    "occupation":"Ocupación",
+    "characters":"Caracteres",
+    "saying":"diciendo",
+    "app_name":"Aplicación Futurama"
     }

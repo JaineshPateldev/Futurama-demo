@@ -14,5 +14,13 @@
     "next":"Next",
     "back":"Back",
     "result_pass":"Result Pass",
-    "result_fail":"Result Fail"
-    }
+    "result_fail":"Result Fail",
+    "gender":"Gender",
+    "species":"Species",
+    "human":"Human",
+    "home_planet":"Home Planet",
+    "occupation":"Occupation",
+    "characters":"Characters",
+    "saying":"Saying",
+    "app_name":"Futurama Application"
+}

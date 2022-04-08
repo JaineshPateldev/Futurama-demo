@@ -21,7 +21,7 @@ class QuizController extends BaseProvider{
    bool isLoading = true;
 
 
-   int? currentQuestion=1;
+   int? currentQuestion=0;
 
    QuizController(){
      currentState = UiState.none;
@@ -100,8 +100,10 @@ class QuizController extends BaseProvider{
 
    void resetQuestion(){
      currentQuestion = 0;
+     mapOfQuestion.clear();
      notifyListeners();
    }
+   
    void backQuestion(){
      currentQuestion =currentQuestion!-1;
       notifyListeners();

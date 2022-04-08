@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:futurama/core/ui/language/app_localizations.dart';
 import 'package:futurama/features/character/presentation/widgets/character_widgets.dart';
 import 'package:provider/provider.dart';
 import '../../../../core/core_export.dart';
@@ -39,7 +40,7 @@ class _CharactersPageState extends State<CharactersPage> {
          model.getCharacters();
       },
       isHome: false,
-      headerTitle: "Characters",
+      headerTitle: (AppLocalizations.of(context)?.translate('characters') )!,
       body: _buidBody(context,this.model),
 
       appBarOnTabFunction: ()=> sl<NavigationService>().goBack(),

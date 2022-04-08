@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:futurama/core/core_export.dart';
-import 'package:futurama/features/character/domain/entities/character.dart';
-
-import '../../../../di_container.dart';
+import 'package:futurama/core/ui/language/app_localizations.dart';
 import '../widgets/saying_widget.dart';
 
 class CharacterDetailPage extends StatefulWidget {
@@ -87,35 +85,35 @@ class _CharacterDetailPageState extends State<CharacterDetailPage> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(32, 5, 8, 32),
                   child: Text(
-                     "Gender : "+ widget.char.gender,
+                     (AppLocalizations.of(context)?.translate('gender') )!+" : "+ widget.char.gender,
                     style: characterSubHeading,
                   ),
                 ),
                  Padding(
                   padding: const EdgeInsets.fromLTRB(32, 0, 8, 32),
                   child: Text(
-                     "Species : "+ widget.char.species,
+                       (AppLocalizations.of(context)?.translate('species') )!+" : "+ widget.char.species,
                     style: characterSubHeading,
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(32, 0, 8, 32),
                   child: Text(
-                     "Home Planet : "+ widget.char.homePlanet,
+                      (AppLocalizations.of(context)?.translate('home_planet'))!+" : "+ widget.char.homePlanet,
                     style: characterSubHeading,
                   ),
                 ),
                  Padding(
                   padding: const EdgeInsets.fromLTRB(32, 0, 8, 32),
                   child: Text(
-                     "Occupation : "+ widget.char.occupation,
+                     (AppLocalizations.of(context)?.translate('occupation'))!+" : "+ widget.char.occupation,
                     style: characterSubHeading,
                   ),                  
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(32, 0, 8, 0),
                   child: Text(
-                     "Saying : ",
+                     (AppLocalizations.of(context)?.translate('saying'))!+" : ",
                     style: characterSubHeading
                   ),                  
                 ),

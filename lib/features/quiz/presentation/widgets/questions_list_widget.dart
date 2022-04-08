@@ -46,7 +46,7 @@ class QuestionsListWidgets extends StatelessWidget {
                         width: SizeConfig.screenWidth!  * 0.9,
                         decoration: BoxDecoration(
                             gradient:characterGradient
-                               ),
+                         ),
                       ),
                     ),
                   ),
@@ -84,10 +84,7 @@ class QuestionsListWidgets extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Text(
-                      "tap to read more",
-                      style: characterSubHeading,
-                    ),
+                   
                   ],
                 ),
               )

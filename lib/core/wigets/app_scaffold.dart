@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
+import 'package:futurama/core/ui/language/app_localizations.dart';
 import 'package:futurama/core/ui/themes/theme_controller.dart';
 import 'package:provider/src/provider.dart';
 import '../core_export.dart';
@@ -72,7 +73,7 @@ class _AppScaffoldState extends State<AppScaffold> {
               backgroundColor: Colors.transparent,
               elevation: 0,
               //title: Center(child: Text(sl<PackageInfo>().appName.toUpperCase() , style: appBarTitleStyle(),)),
-              title: Align(alignment: Alignment.centerLeft,child: Text(widget.headerTitle ?? "Futurama Application" , style: appBarTitleStyle(context),)),
+              title: Align(alignment: Alignment.centerLeft,child: Text(widget.headerTitle ?? (AppLocalizations.of(context)?.translate('app_name') )! , style: appBarTitleStyle(context),)),
               actions: [
                 widget.isHome == true
                     ?  Padding(

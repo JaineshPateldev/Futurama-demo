@@ -75,13 +75,19 @@ TextStyle snackBarStyle() {
 );
 }
 
-TextStyle appBarTitleStyle() {
-  return TextStyle(
-    fontSize: SizeConfig.safeBlockHorizontal! * 4,
-    color: Colors.white,
-    fontWeight: FontWeight.w600,
-  );
+TextStyle appBarTitleStyle(context) {
+   return Theme.of(context).textTheme.headline6!.apply(fontSizeFactor: 1);
+  // return TextStyle(
+  //   fontSize: SizeConfig.safeBlockHorizontal! * 4,
+  //   color: Colors.white,
+  //   fontWeight: FontWeight.w600,
+  // );
 }
+
+TextStyle toggleTitleStyle(context) {
+  return Theme.of(context).textTheme.headline6!.apply(fontSizeFactor: 0.5);
+}
+
 
 TextStyle chipLableStyle() {
   return TextStyle(

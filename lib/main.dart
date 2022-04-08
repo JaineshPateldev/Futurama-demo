@@ -3,6 +3,8 @@ import 'package:futurama/features/character/presentation/controller/character_co
 import 'package:futurama/features/home/presentation/controller/home_controller.dart';
 import 'package:provider/provider.dart';
 import 'core/core_export.dart';
+import 'core/ui/themes/theme_controller.dart';
+import 'core/ui/themes/theme_data_constant.dart';
 import 'di_container.dart' as di;
 import 'di_container.dart';
 import 'features/quiz/presentation/controller/quiz_controller.dart';
@@ -27,8 +29,7 @@ void main() async{
         ChangeNotifierProvider(create: (_) => HomeController()),
         ChangeNotifierProvider(create: (_) => CharacterController()),
         ChangeNotifierProvider(create: (_) => QuizController()),
-
-        
+        ChangeNotifierProvider(create: (_) => ThemeController(localDataSource: sl())),
       ],
       child:  const MyApp(),
     ),
@@ -49,9 +50,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+       theme: context.watch<ThemeController>().currentTheme ? ThemeDataConstant.dark : ThemeDataConstant.light,
         navigatorKey: sl<NavigationService>().navigatorKey,
         onGenerateRoute: router.Router.generateRoute,
        initialRoute: RoutePaths.homePage,

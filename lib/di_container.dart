@@ -10,6 +10,7 @@ import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 import 'core/core_export.dart';
+import 'core/ui/themes/theme_controller.dart';
 import 'features/character/data/repositories/character_repository_impl.dart';
 import 'features/character/domain/repositories/character_repository.dart';
 import 'features/home/data/repositories/home_repository_impl.dart';
@@ -78,9 +79,6 @@ Future<void> init() async {
 
   
   sl.registerLazySingleton(() => NavigationService());
-
-  
-
 
 }
 

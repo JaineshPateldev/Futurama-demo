@@ -138,7 +138,7 @@ class QuizController extends BaseProvider{
      String correctAns = getCorrentAns().toString();
      String totalAttemt = totalAttemtAns().toString();
 
-       String sb = "You have Answered $correctAns of  $numberOfQuestionInQuiz correctly \n You have Attempt $totalAttemt of  $numberOfQuestionInQuiz correctly "; 
+       String sb = "You have Answered $correctAns of  $numberOfQuestionInQuiz correctly \n You have Attempt $totalAttemt of  $numberOfQuestionInQuiz "; 
        return sb;
    }
 

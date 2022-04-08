@@ -55,7 +55,20 @@ class _HomePageState extends State<HomePage> {
       case UiState.error :
           return  CustomErrorWidget(title: homeController!.errorMessage , refreshFunction: ()=>homeController.getInfo());
       case UiState.loaded :
-          return InfoWidget(info: homeController.info);
+          return Column(
+            children: [
+              
+              InfoWidget(info: homeController.info),
+
+                ExcludeSemantics(
+                  child: Padding(
+                        padding: const EdgeInsets.all(20),
+                    child:Align(alignment: Alignment.topLeft,
+                            child: Text("To Access the Accessibility\nPlease Activated the Talkback" , style: headerStyle() , textAlign: TextAlign.left,)),  
+                  ),
+                ),
+            ],
+          );
       default:
             return  CustomErrorWidget(title: '' , refreshFunction: ()=>homeController.getInfo());
     }

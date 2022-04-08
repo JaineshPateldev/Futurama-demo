@@ -104,8 +104,8 @@ class _AppScaffoldState extends State<AppScaffold> {
                                       ? const Icon(Icons.dark_mode)
                                       :const Icon(Icons.light_mode),
                                   textBuilder: (value) => value
-                                      ?  Center(child: Text('Dark Mode',style: toggleTitleStyle(context)))
-                                      :  Center(child: Text('Light Mode' , style: toggleTitleStyle(context))),
+                                      ?  Center(child: Text('Dark Mode',style: toggleTitleStyle(context) ,  semanticsLabel:"Light Mode"))
+                                      :  Center(child: Text('Light Mode' , style: toggleTitleStyle(context),  semanticsLabel:"Dark Mode")),
                                 ),
                       ),
                     ) 

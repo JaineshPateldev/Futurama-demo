@@ -62,8 +62,10 @@ class CustomButton extends StatelessWidget {
                   ),
             Text(
               buttonText,
+              semanticsLabel: buttonText,
               style: customButtonStyle(
                 textColor: textColor,
+                
               ),
             ),
             isSuffixIcon == false

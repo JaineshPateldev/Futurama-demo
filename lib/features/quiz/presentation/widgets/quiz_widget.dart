@@ -116,7 +116,7 @@ class QuizWidget extends StatelessWidget {
                             animType: AnimType.TOPSLIDE,
                             showCloseIcon: false,
                             closeIcon: Icon(Icons.close_fullscreen_outlined),
-                            title: context.read<QuizController>().isPass() ?  "Congratulations !!" : "Unfortunately !!" ,
+                            title: context.read<QuizController>().isPass() ?  "Congratulations Pass!!" : "Unfortunately Fail!!" ,
                             desc: context.read<QuizController>().getDescription(), 
                             btnOkOnPress: () {
                                   context.read<QuizController>().resetQuestion();

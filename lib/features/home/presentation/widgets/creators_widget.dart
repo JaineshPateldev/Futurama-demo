@@ -14,15 +14,27 @@ class CreatorsWidget extends StatelessWidget {
   double spacing = 5.1;
   @override
   Widget build(BuildContext context) {
-    return Align(
-        alignment: Alignment.center,
-        child: Wrap(
-          runSpacing: spacing,
-          spacing: spacing,
-            children: getWidgets(context,creators),
+    return Column(
+      children: [
           
-            ),
-      );
+      ExcludeSemantics(
+        child: Padding(
+              padding: const EdgeInsets.only(top: 5),
+          child:Align(alignment: Alignment.topLeft,
+                  child: Text("Creators :" , style: lableTextStyle() , textAlign: TextAlign.left,)),  
+        ),
+      ),
+        Align(
+            alignment: Alignment.center,
+            child: Wrap(
+              runSpacing: spacing,
+              spacing: spacing,
+                children: getWidgets(context,creators),
+              
+                ),
+          ),
+      ],
+    );
   }
 
 
@@ -42,7 +54,7 @@ class CreatorsWidget extends StatelessWidget {
                         ), 
                         Padding(
                           padding: const EdgeInsets.all(3.0),
-                          child: Text(element.name , style: chipLableStyle(),),
+                          child: Text(element.name , style: chipLableStyle(),semanticsLabel: "Creators " +element.name),
                         )
                       ]),
                   

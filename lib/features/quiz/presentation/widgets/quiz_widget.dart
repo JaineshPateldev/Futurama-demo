@@ -5,6 +5,7 @@ import 'package:futurama/features/home/presentation/widgets/creators_widget.dart
 import 'package:futurama/features/quiz/domain/entities/question.dart';
 import 'package:futurama/features/quiz/presentation/controller/quiz_controller.dart';
 import 'package:futurama/features/quiz/presentation/widgets/question_widget.dart';
+import 'package:futurama/features/quiz/presentation/widgets/score_widget.dart';
 import 'package:futurama/features/routing/route_path.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:provider/src/provider.dart';
@@ -24,6 +25,7 @@ class QuizWidget extends StatelessWidget {
       child: GFCard(
                     elevation: 5.5,
                       boxFit: BoxFit.cover,
+                      title: GFListTile(title: ScoreWidget(),),
                       content:QuestionWidget(question: questions[context.watch<QuizController>().currentQuestion!]),
                       buttonBar: GFButtonBar(
                       children: <Widget>[
@@ -80,6 +82,7 @@ class QuizWidget extends StatelessWidget {
                             desc:desc,
                             btnCancelOnPress: () {},
                             btnOkOnPress: () {
+                              context.read<QuizController>().resetQuestion();
                               sl<NavigationService>().goBack();
                             })
                           .show();
@@ -114,9 +117,7 @@ class QuizWidget extends StatelessWidget {
                             showCloseIcon: false,
                             closeIcon: Icon(Icons.close_fullscreen_outlined),
                             title: context.read<QuizController>().isPass() ?  "Congratulations !!" : "Unfortunately !!" ,
-                            desc: context.read<QuizController>().getDescription(),
-                            btnCancelOnPress: () {context.read<QuizController>().resetQuestion();
-                                   sl<NavigationService>().goBack();},
+                            desc: context.read<QuizController>().getDescription(), 
                             btnOkOnPress: () {
                                   context.read<QuizController>().resetQuestion();
                                    sl<NavigationService>().goBack();
